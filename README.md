@@ -76,8 +76,3 @@
   </a>
 </div>
 
-###
-
-<img src="https://raw.githubusercontent.com/Codder-Lab/Codder-Lab/output/snake.svg" alt="Snake animation" />
-
-###
