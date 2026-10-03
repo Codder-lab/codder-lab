@@ -1,0 +1,83 @@
+<svg viewBox="0 0 1000 280" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Contribution Telemetry graph for Codder-lab">
+  <style>
+    :root { --ink:#000000; --muted:#555555; --dim:#777777; --rule:#D0D0D0; }
+    .mono { font-family:ui-monospace,"SFMono-Regular","SF Mono",Menlo,Consolas,"Liberation Mono",monospace; fill:var(--ink); }
+    .panel,.rule { stroke:var(--rule); stroke-width:1; fill:none; }
+    .spark { stroke:var(--ink); stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:1200; stroke-dashoffset:1200; animation:draw 2s cubic-bezier(.6,0,.2,1) .3s forwards; }
+    @keyframes draw { to { stroke-dashoffset:0; } }
+    .area { fill:var(--ink); opacity:0.07; }
+    .dot { opacity:0; animation:pop .4s ease forwards; }
+    .d1{animation-delay:.6s}.d2{animation-delay:.8s}.d3{animation-delay:1.0s}.d4{animation-delay:1.2s}.d5{animation-delay:1.4s}.d6{animation-delay:1.6s}.d7{animation-delay:1.8s}
+    @keyframes pop { from{opacity:0;transform:scale(0)} to{opacity:1;transform:scale(1)} }
+    .ping { animation:ping 2.2s ease-out infinite; transform-origin:890px 105px; }
+    @keyframes ping { 0%{transform:scale(.4);opacity:.9} 80%,100%{transform:scale(2.8);opacity:0} }
+    @media (prefers-reduced-motion:reduce) {
+      .spark { stroke-dashoffset:0; animation:none; }
+      .dot { opacity:1; }
+      .ping { opacity:0; }
+    }
+  </style>
+
+  <!-- Panel Base -->
+  <rect class="panel" x="24" y="16" width="952" height="248" rx="2"/>
+
+  <!-- Header -->
+  <g class="mono">
+    <text x="52" y="48" font-size="13.5" font-weight="700" letter-spacing="2">CONTRIBUTION TELEMETRY</text>
+    <text x="948" y="48" font-size="10.5" fill="var(--muted)" letter-spacing="2" text-anchor="end">LIVE CADENCE // 2025 – 2026</text>
+    <line class="rule" x1="52" y1="62" x2="948" y2="62"/>
+  </g>
+
+  <!-- Grid Guidelines -->
+  <line x1="52" y1="110" x2="948" y2="110" stroke="var(--rule)" stroke-dasharray="2 4" opacity=".4"/>
+  <line x1="52" y1="155" x2="948" y2="155" stroke="var(--rule)" stroke-dasharray="2 4" opacity=".4"/>
+  <line x1="52" y1="200" x2="948" y2="200" stroke="var(--rule)" stroke-dasharray="2 4" opacity=".4"/>
+
+  <!-- Shaded Area polygon under curve -->
+  <polygon class="area" points="52,200 130,185 210,195 285,160 365,170 440,140 520,150 600,120 680,135 750,95 825,115 890,105 890,200 52,200"/>
+
+  <!-- Sparkline Polyline -->
+  <polyline class="spark" points="52,200 130,185 210,195 285,160 365,170 440,140 520,150 600,120 680,135 750,95 825,115 890,105" fill="none"/>
+
+  <!-- Milestone Dots -->
+  <circle class="dot d1" cx="130" cy="185" r="3" fill="var(--ink)"/>
+  <circle class="dot d2" cx="285" cy="160" r="3" fill="var(--ink)"/>
+  <circle class="dot d3" cx="440" cy="140" r="3" fill="var(--ink)"/>
+  <circle class="dot d4" cx="600" cy="120" r="3" fill="var(--ink)"/>
+  <circle class="dot d5" cx="750" cy="95" r="3.5" fill="var(--ink)"/>
+  <circle class="dot d6" cx="825" cy="115" r="3" fill="var(--ink)"/>
+
+  <!-- Current Live Peak Pulse -->
+  <circle class="ping" cx="890" cy="105" r="4" stroke="var(--ink)" fill="none"/>
+  <circle class="dot d7" cx="890" cy="105" r="3.5" fill="var(--ink)"/>
+
+  <!-- Month Axis Labels -->
+  <g class="mono" font-size="9.5" fill="var(--dim)">
+    <text x="52" y="218">OCT</text>
+    <text x="130" y="218">NOV</text>
+    <text x="210" y="218">DEC</text>
+    <text x="285" y="218">JAN</text>
+    <text x="365" y="218">FEB</text>
+    <text x="440" y="218">MAR</text>
+    <text x="520" y="218">APR</text>
+    <text x="600" y="218">MAY</text>
+    <text x="680" y="218">JUN</text>
+    <text x="750" y="218">JUL</text>
+    <text x="825" y="218">AUG</text>
+    <text x="890" y="218">SEP</text>
+  </g>
+
+  <!-- Bottom Metric Strip -->
+  <line class="rule" x1="52" y1="230" x2="948" y2="230"/>
+  <g class="mono" font-size="10">
+    <text x="52" y="248" fill="var(--dim)">ANNUAL VOLUME:</text>
+    <text x="175" y="248" font-weight="700">500+ CONTRIBUTIONS</text>
+
+    <text x="360" y="248" fill="var(--dim)">PRIMARY CADENCE:</text>
+    <text x="495" y="248" font-weight="700">REACT NATIVE &amp; APIS</text>
+
+    <text x="710" y="248" fill="var(--dim)">VELOCITY:</text>
+    <text x="785" y="248" font-weight="700">ACCELERATING ↑</text>
+    <text x="948" y="248" text-anchor="end" fill="var(--muted)">SYS_MONITOR</text>
+  </g>
+</svg>
